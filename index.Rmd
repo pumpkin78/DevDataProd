@@ -1,0 +1,60 @@
+---
+
+title       : MPG Prediction
+author      : Binh Nguyen
+job         : Data Scientist
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+
+---
+
+## INTRODUCTION
+
+This application is a project of the course Developing Data Products, Data Science Specilization.
+
+It will get some car attributes from users and predict the value of Miles Per Galon (MPG) of that car.
+
+The code (ui.R and server.r) are located at https://github.com/pumpkin78/DevDataProd
+
+--- 
+
+## Dataset
+
+This application uses the dataset Motor Trend Car Road Tests, "mtcars", included in R installation.
+
+
+```{r}
+data (mtcars)
+head(mtcars, 5)
+summary(mtcars)
+```
+---
+
+## INPUT - HOW TO USE
+
+Users have to provide the attributes of the car she/he wants to predict the MPG:   
+1) Number of cylinders (cyl) within the range between 2 and 10  
+2) Gross horsepower (hp)  
+3) Tranmission Type: select either "Automatic" or "Manual"  
+4) Weight of the car  
+
+Then click on "Submit" button. The web user interface will send the information to the server to calculate and then send back the result to the user interface.
+
+---
+
+## OUTPUT
+
+The server predict the MPG based on a the input and an internal linear regression model and output the predicted MPG on the output panel. In order for users to understand a bigger picture, the application also presents a plot of predicted MPGs v.s. Weight given the same values of number of cylinders, gross horsepower and transmission type.
+
+---
+
+## LIMITATION & FUTURE WORK
+
+1) Fixed simple internal linear regression model. This could be upgraded for users to select regression models.
+
+2) This application uses the old dataset "mtcars" which is not up-to-date. 
+
+
